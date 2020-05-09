@@ -32,8 +32,11 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
+
+            return (Math.abs(xStart - xEnd) == 2 && (Math.abs(yStart - yEnd) == 1)) || (Math.abs(xStart - xEnd) == 1 && (Math.abs(yStart - yEnd) == 2));
         }
     }
 
@@ -43,8 +46,11 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
+
+            return (Math.abs(xStart - xEnd) == 0 || Math.abs(xStart - xEnd) == 1) && (Math.abs(yStart - yEnd) == 0 || Math.abs(yStart - yEnd) == 1);
         }
     }
 
@@ -54,8 +60,11 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
+
+            return yEnd == yStart + 1 &&  xStart == xEnd;
         }
     }
 
@@ -65,8 +74,11 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
+
+            return Math.abs(xEnd - xStart) == Math.abs(yEnd - yStart) || xStart == xEnd || yStart == yEnd;
         }
     }
 
@@ -76,14 +88,13 @@ public interface RulesOfGame {
 
         @Override
         public boolean isCorrectMove(int xStart, int yStart, int xEnd, int yEnd) {
-            // TODO: Prosze dokonczyc implementacje
-            return true;
+            if(xStart == xEnd && yStart == yEnd) {
+                return false;
+            }
+
+            return xStart == xEnd || yStart == yEnd;
         }
     }
 
 
-
-    // TODO: Prosze dokonczyc implementacje kolejnych figur szachowych: Knight, King, Queen, Rock, Pawn
-    // TODO: Prosze stosowac zaproponowane nazwy klas !!! (Prowadzacy zajecia posiada wlasne testy)
-    // TODO: Kazda klasa powinna implementowac interfejs RulesOfGame
 }

@@ -14,4 +14,16 @@ public class FigureMoveDto implements Serializable {
     private String start;
     private String destination;
     private FigureType type;
+
+    public FigureType getType() {
+        return type;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public String getStart() {
+        return start;
+    }
 }
